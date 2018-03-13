@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.kafka.common.record;
+package org.apache.kafka.streams;
 
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
