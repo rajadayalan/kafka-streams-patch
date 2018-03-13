@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.apache.kafka.streams;
+package org.apache.kafka.common.record;
 
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -30,6 +30,7 @@ import org.apache.kafka.common.config.ConfigException;
 import org.apache.kafka.common.metrics.Sensor;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.errors.StreamsException;
 import org.apache.kafka.streams.processor.DefaultPartitionGrouper;
 import org.apache.kafka.streams.processor.FailOnInvalidTimestamp;
@@ -345,45 +346,45 @@ public class StreamsConfig extends AbstractConfig {
                     Importance.MEDIUM,
                     SECURITY_PROTOCOL_DOC)
             .define(CONNECTIONS_MAX_IDLE_MS_CONFIG,
-                    ConfigDef.Type.LONG,
+                    Type.LONG,
                     9 * 60 * 1000,
-                    ConfigDef.Importance.MEDIUM,
+                    Importance.MEDIUM,
                     CONNECTIONS_MAX_IDLE_MS_DOC)
             .define(RETRY_BACKOFF_MS_CONFIG,
-                    ConfigDef.Type.LONG,
+                    Type.LONG,
                     100L,
                     atLeast(0L),
-                    ConfigDef.Importance.LOW,
+                    Importance.LOW,
                     RETRY_BACKOFF_MS_DOC)
             .define(METADATA_MAX_AGE_CONFIG,
-                    ConfigDef.Type.LONG,
+                    Type.LONG,
                     5 * 60 * 1000,
                     atLeast(0),
-                    ConfigDef.Importance.LOW,
+                    Importance.LOW,
                     METADATA_MAX_AGE_DOC)
             .define(RECONNECT_BACKOFF_MS_CONFIG,
-                    ConfigDef.Type.LONG,
+                    Type.LONG,
                     50L,
                     atLeast(0L),
-                    ConfigDef.Importance.LOW,
+                    Importance.LOW,
                     RECONNECT_BACKOFF_MS_DOC)
             .define(SEND_BUFFER_CONFIG,
-                    ConfigDef.Type.INT,
+                    Type.INT,
                     128 * 1024,
                     atLeast(0),
-                    ConfigDef.Importance.MEDIUM,
+                    Importance.MEDIUM,
                     SEND_BUFFER_DOC)
             .define(RECEIVE_BUFFER_CONFIG,
-                    ConfigDef.Type.INT,
+                    Type.INT,
                     32 * 1024,
                     atLeast(0),
-                    ConfigDef.Importance.MEDIUM,
+                    Importance.MEDIUM,
                     RECEIVE_BUFFER_DOC)
             .define(REQUEST_TIMEOUT_MS_CONFIG,
-                    ConfigDef.Type.INT,
+                    Type.INT,
                     40 * 1000,
                     atLeast(0),
-                    ConfigDef.Importance.MEDIUM,
+                    Importance.MEDIUM,
                     REQUEST_TIMEOUT_MS_DOC);
     }
 
