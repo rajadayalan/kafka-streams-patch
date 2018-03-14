@@ -140,7 +140,6 @@ public class MemoryRecordsBuilder {
 
         // create the stream
         bufferStream = new ByteBufferOutputStream(buffer);
-        System.out.println("Inside MemoryRecordsBuilder : " + compressionType + " : " + COMPRESSION_DEFAULT_BUFFER_SIZE);
         appendStream = wrapForOutput(bufferStream, compressionType, magic, COMPRESSION_DEFAULT_BUFFER_SIZE);
     }
 
